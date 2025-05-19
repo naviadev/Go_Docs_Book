@@ -6,6 +6,10 @@ import (
 )
 
 func main() {
-	message := greetings.Hello("야호")
-	fmt.Print(message)
+	message, error := greetings.Hello("야호")
+	if error != nil {
+		fmt.Print(error)
+	} else {
+		fmt.Print(message)
+	}
 }
